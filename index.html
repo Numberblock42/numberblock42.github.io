@@ -12,7 +12,7 @@
             background-color: rgb(247, 251, 255);
         }
 
-        .prime-search {
+        .prime-search, .articles {
             font-family: Calibri, 'Trebuchet MS', sans-serif;
             justify-content: center;
             align-items: center;
@@ -48,7 +48,7 @@
             cursor: default;
         }
 
-        #wrapitall {
+        #wrapitall, #articles {
             background-color: white;
             border: 2.5px solid rgb(185, 191, 197);
             border-radius: 25px;
@@ -68,7 +68,7 @@
     <div class="prime-search" id="wrapitall">
         <h1>Numberblock 42's Prime Numbers</h1>
         <p>This website is all about <u>prime numbers</u>!</p>
-        <p>Version 1.0.3 / Dynamic Update</p>
+        <p>Version 1.0.35 [no name]</p>
         <hr>
         <h3><strong>Mini articles (displayed using <code><mark style="background-color: aliceblue;">alert()</mark></code> JavaScript function)</strong></h3>
         <button type="button" onclick="alert('Prime numbers are numbers that have a factor of 1 and themselves. Numbers that have other numbers as their factors are called composite numbers.')">What are prime numbers?</button>
@@ -84,6 +84,19 @@
         <button type="button" onclick="resetForm()"><span>&#10227;</span> Reset</button>
         <div id="result"></div>
         <h1></h1>
+    </div>
+    <br>
+    <div class="articles" id="articles">
+        <h1>Full-sized articles</h1>
+        <p>Because we have mini articles, why not we add their full-sized counterparts?</p>
+        <hr>
+        <h3>What are Prime Numbers?</h3>
+        <p>A prime number is a whole number greater than 1 that can only be divided evenly by 1 and itself. It has no other factors. For example, 17 can only be divided by 1 and 17, so it is prime.</p>
+        <h3>Key rules for prime numbers:</h3>
+        <p>Greater than 1: The number 1 is not prime because it has only one factor.</p>
+        <p>Two factors: A prime number has exacty two factors: 1 and the number itself.</p>
+        <hr>
+        <p style="color: rgb(125, 131, 142)">All caught up!</p>
     </div>
 
     <script>
