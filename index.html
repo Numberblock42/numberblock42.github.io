@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Numbers by Saka Wildan Pradipta</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .prime-search {
+            font-family: Calibri, 'Trebuchet MS', sans-serif;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        input {
+            font-family: Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        input:focus {
+            outline-color: rgb(0, 145, 255);
+        }
+
+        button {
+            font-family: Calibri, 'Trebuchet MS', sans-serif;
+            cursor: default;
+            background-color: white;
+            border: 1px solid;
+            border-radius: 2.5px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: rgb(216, 240, 255);
+            box-shadow: 0 10 5 5px solid rgba(50, 50, 50, 0.5);
+        }
+
+        h2 {
+            cursor: default;
+        }
+
+    </style>
+
+    <div class="prime-search">
+        <h1>Prime Numbers by Saka Wildan Pradipta</h1>
+        <p>This website is all about <u>prime numbers</u>!</p>
+        <p>Version 1.0.0 / Negative Numbers overhaul</p>
+        <hr>
+        <h3><strong>Mini articles (displayed using <code><mark style="background-color: aliceblue;">alert()</mark></code> JavaScript function)</strong></h3>
+        <button type="button" onclick="alert('Prime numbers are numbers that have a factor of 1 and themselves. Numbers that have other numbers as their factors are called composite numbers.')">What are prime numbers?</button>
+        <button type="button" onclick="alert('Composite numbers are the complete opposite of primes, as they have more than 2 multiplication factors.')">What are composite numbers?</button>
+        <br>
+        <button type="button" onclick="alert('1 is not a prime number because it only has 1 factor, being 1 itself. Prime numbers must always have 2 factors.')">Why isn't 1 a prime number?</button>
+        <hr>
+        <h3>Prime Number Finder Tool</h3>
+        <label for="query-prime">Enter an integer number:</label>
+        <input type="number" name="query-prime" id="primeselect" placeholder="e.g., 17">
+        <button type="button" onclick="searchPrime()">Submit</button>
+        <button type="button" onclick="resetForm()">Reset</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function isPrime(n){
+            if (isNaN(n) || n <= 1) return false;
+            if (n === 2) return true;
+            if (n % 2 === 0) return false;
+
+            const squareRoot = Math.sqrt(n);
+            for (let i = 3; i <= squareRoot; i += 2){
+                if (n % i === 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function searchPrime(){
+            const inputNumber = document.getElementById("primeselect");
+            const resultElement = document.getElementById("result");
+            const value = parseInt(inputNumber.value, 10);
+
+            if (isPrime(value)){
+                resultElement.innerText = value + " is a prime number.";
+            } else {
+                if (value === 1){
+                    resultElement.innerText = value + " isn't a prime number. Try reading the 'Why isn't 1 a prime number?' article to understand more details."
+                } else {
+                    resultElement.innerText = value + " isn't a prime number.";
+                }
+                if (isNaN(value)){
+                    resultElement.innerText = "That is not a valid number.";
+                } 
+                if (isPrime(value) === false & value > 1){
+                    resultElement.innerText = value + " isn't a prime number. Rather, " + value + " is a composite number.";
+                }
+                if (isPrime(value) === false & value < 0){
+                    resultElement.innerText = value + " isn't a prime number. Rather, " + value + " is a negative number."
+                }
+            }
+        }
+
+        function resetForm(){
+            document.getElementById("primeselect").value = "";
+            document.getElementById("result").innerText = "";
+        }
+    </script>
+</body>
+</html>
