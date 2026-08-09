@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Numbers by Saka Wildan Pradipta</title>
+    <link rel="shortcut icon" href="unnamed-modified.png" type="image/png">
+    <title>Prime Numbers by NB42</title>
 </head>
 <body>
     <style>
@@ -26,7 +27,7 @@
         }
 
         input:focus {
-            outline-color: rgb(0, 145, 255);
+            outline-color: rgb(76, 115, 145);
         }
 
         button {
@@ -39,7 +40,8 @@
 
         button:hover {
             cursor: pointer;
-            background-color: rgb(216, 240, 255);
+            background-color: rgb(226, 238, 246);
+            color: rgb(95, 118, 133);
         }
 
         h2 {
@@ -48,7 +50,7 @@
 
         #wrapitall {
             background-color: white;
-            border: 5px solid rgb(185, 191, 197);
+            border: 2.5px solid rgb(185, 191, 197);
             border-radius: 25px;
             box-shadow: 0px 10px 35px 10px rgba(64, 71, 79, 0.25);
         }
@@ -64,7 +66,7 @@
     </style>
 
     <div class="prime-search" id="wrapitall">
-        <h1>Prime Numbers by Saka Wildan Pradipta</h1>
+        <h1>Prime Numbers by Numberblock 42</h1>
         <p>This website is all about <u>prime numbers</u>!</p>
         <p>Version 1.0.3 / Dynamic Update</p>
         <hr>
@@ -76,6 +78,7 @@
         <hr>
         <h3>Prime Number Finder Tool</h3>
         <label for="query-prime">Enter an integer number:</label>
+        <button type="button" onclick="deleteValue()">&times;</button>
         <input type="number" name="query-prime" id="primeselect" placeholder="e.g., 17">
         <button type="button" onclick="searchPrime()">Submit</button>
         <button type="button" onclick="resetForm()"><span>&#10227;</span> Reset</button>
@@ -131,6 +134,10 @@
         function resetForm(){
             document.getElementById("primeselect").value = "";
             document.getElementById("result").innerText = "";
+        }
+
+        function deleteValue(){
+            document.getElementById("primeselect").value = "";
         }
 
         const inputQuery = document.getElementById("primeselect")
