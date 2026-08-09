@@ -1,5 +1,0 @@
-
-Ask in the Issues page to make pull requests, to be verified to make a single pull request. (single-time use, expires instantly)
-Rules:
-  1. Spamming for pull requests is not allowed.
-  2. I will track people that didn't verify first.
