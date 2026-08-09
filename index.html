@@ -49,7 +49,7 @@
     <div class="prime-search">
         <h1>Prime Numbers by Saka Wildan Pradipta</h1>
         <p>This website is all about <u>prime numbers</u>!</p>
-        <p>Version 1.0.0 / Negative Numbers overhaul</p>
+        <p>Version 1.0.1 [no update name]</p>
         <hr>
         <h3><strong>Mini articles (displayed using <code><mark style="background-color: aliceblue;">alert()</mark></code> JavaScript function)</strong></h3>
         <button type="button" onclick="alert('Prime numbers are numbers that have a factor of 1 and themselves. Numbers that have other numbers as their factors are called composite numbers.')">What are prime numbers?</button>
@@ -84,6 +84,11 @@
             const inputNumber = document.getElementById("primeselect");
             const resultElement = document.getElementById("result");
             const value = parseInt(inputNumber.value, 10);
+            inputNumber.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter'){
+                    searchPrime()
+                }
+            });
 
             if (isPrime(value)){
                 resultElement.innerText = value + " is a prime number.";
@@ -109,6 +114,12 @@
             document.getElementById("primeselect").value = "";
             document.getElementById("result").innerText = "";
         }
+
+        inputNumber.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter'){
+                searchPrime()
+            }
+        });
     </script>
 </body>
 </html>
